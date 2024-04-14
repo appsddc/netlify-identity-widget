@@ -20,6 +20,10 @@ const messages = {
   signup_disabled: {
     type: "error",
     text: "message_signup_disabled"
+  },
+  password_does_not_match: {
+    type: "error",
+    text: "password_does_not_match"
   }
 };
 

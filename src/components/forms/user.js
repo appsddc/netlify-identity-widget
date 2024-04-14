@@ -5,16 +5,28 @@ import Button from "./button";
 export default class UserForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { name: "", email: "", password: "" };
+    this.state = { name: "", email: "", password: "", confirmPassword: "" };
   }
 
   handleInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+    // if (this.checkPassowrd(e)) {
+    // } else {
+    //   this.setState({ [this.state.password]: "" });
+    //   // <Message type="password_does_not_match" t={this.props.t} />; // this is not working
+    // }
   };
 
   handleLogin = (e) => {
     e.preventDefault();
     this.props.onSubmit(this.state);
+  };
+
+  checkPassowrd = (e) => {
+    // this.setState({ [e.target.name]: e.target.value });
+    if (this.state.password !== this.state.confirmPassword) {
+      this.setState({ confirmPassword: "" });
+    }
   };
 
   render() {
@@ -93,7 +105,7 @@ export default class UserForm extends Component {
                 placeholder={t("Confirm Password")}
                 autocomplete={page.password}
                 required
-                // oninput={this.handleInput}
+                oninput={this.handleInput}
               />
               {/* <div className="inputFieldIcon inputFieldPassword" /> */}
             </label>
