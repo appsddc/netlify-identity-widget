@@ -33,7 +33,7 @@ export default class Modal extends Component {
       devSettings,
       isOpen,
       children,
-      logo,
+      // logo,
       t,
       isLocal,
       clearSiteURL,
@@ -113,7 +113,7 @@ export default class Modal extends Component {
             {children}
           </div>
         </div>
-        {logo && (
+        {/* {logo && (
           <a
             href="https://www.netlify.com"
             className={`callOut${loading ? " visuallyHidden" : ""}`}
@@ -121,7 +121,7 @@ export default class Modal extends Component {
             <span className="netlifyLogo" />
             {t("coded_by")}
           </a>
-        )}
+        )} */}
       </div>
     );
   }
