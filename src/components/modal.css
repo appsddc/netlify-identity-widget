@@ -352,6 +352,7 @@
   transition: box-shadow ease-in-out 0.15s;
   -webkit-appearance: none;
   -moz-appearance: none;
+  margin-top: 0.5em;
 }
 
 .inputFieldIcon {
@@ -383,6 +384,7 @@
 }
 
 .formLabel {
+  margin-top: 5px;
 }
 
 .hr {
