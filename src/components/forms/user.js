@@ -19,7 +19,7 @@ export default class UserForm extends Component {
 
   render() {
     const { page, message, saving, namePlaceholder, t } = this.props;
-    const { name, email, password } = this.state;
+    const { name, email, password, confirmPassword } = this.state;
 
     return (
       <form
@@ -81,7 +81,21 @@ export default class UserForm extends Component {
                 required
                 oninput={this.handleInput}
               />
-              <div className="inputFieldIcon inputFieldPassword" />
+              {/* <div className="inputFieldIcon inputFieldPassword" /> */}
+            </label>
+            <label>
+              <span className="visuallyHidden">{t("form_password_label")}</span>
+              <input
+                className="formControl"
+                type="password"
+                name="confirmPassword"
+                value={confirmPassword}
+                placeholder={t("Confirm Password")}
+                autocomplete={page.password}
+                required
+                // oninput={this.handleInput}
+              />
+              {/* <div className="inputFieldIcon inputFieldPassword" /> */}
             </label>
           </div>
         )}
